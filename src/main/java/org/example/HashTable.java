@@ -53,5 +53,23 @@ public class HashTable<K, V> {
         return result.toString();
     }
 
+    public void remove(K key) {
+        int index = getIndex(key);
+        LinkedList<MyMapNode<K, V>> bucket = buckets[index];
+
+        MyMapNode<K, V> toRemove = null;
+        for (MyMapNode<K, V> node : bucket) {
+            if (node.key.equals(key)) {
+                toRemove = node;
+                break;
+            }
+        }
+        if (toRemove != null) {
+            bucket.remove(toRemove);
+            System.out.println("Removed: " + key);
+        } else {
+            System.out.println(key + " not found");
+        }
+    }
 
 }
