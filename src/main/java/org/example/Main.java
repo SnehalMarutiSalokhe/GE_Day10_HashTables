@@ -12,5 +12,15 @@ public class Main {
             hashTable.put(word, count);
         }
         System.out.println(hashTable);
+
+
+        String paragraph = "Paranoids are not paranoid because they are paranoid but because they keep putting themselves deliberately into paranoid avoidable situations";
+        for (String word : paragraph.split(" ")) {
+            Integer count = hashTable.get(word);
+            count = (count == null) ? 1 : count + 1;
+            hashTable.put(word, count);
+        }
+        System.out.println(hashTable);
+
     }
 }
