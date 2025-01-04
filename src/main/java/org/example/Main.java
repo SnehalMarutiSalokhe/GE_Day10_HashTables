@@ -22,5 +22,7 @@ public class Main {
         }
         System.out.println(hashTable);
 
+        hashTable.remove("avoidable");
+        System.out.println(hashTable);
     }
 }
